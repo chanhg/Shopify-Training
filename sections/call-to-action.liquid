@@ -1,6 +1,57 @@
 {% schema %}
-  {
-    "name": "Section name",
-    "settings": []
-  }
+{
+  "name": "Call to Action",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section Title",
+      "default": "Shop Our Seasonal Collection"
+    },
+    {
+      "type": "textarea",
+      "id": "preorder_info",
+      "label": "Pre-order Information",
+      "default": "Pre-order your favorite seasonal items now!"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Call to Action"
+    }
+  ]
+}
 {% endschema %}
+
+<div class="cta-section">
+  <h2>{{ section.settings.section_title }}</h2>
+  
+  {% if collection %}
+    <h3>{{ collection.title }} is out now!</h3>
+  {% endif %}
+
+  {% if section.settings.preorder_info != blank %}
+    <p>{{ section.settings.preorder_info }}</p>
+  {% endif %}
+</div>
+
+<style>
+  .cta-section {
+    text-align: center;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+  }
+  .cta-section h2 {
+    font-size: 24px;
+    color: #333;
+  }
+  .cta-section h3 {
+    font-size: 20px;
+    color: #555;
+  }
+  .cta-section p {
+    font-size: 16px;
+    color: #777;
+  }
+</style>
