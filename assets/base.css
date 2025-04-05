@@ -1003,6 +1003,10 @@ summary::-webkit-details-marker {
     max-width: 100%;
   }
 
+  .header-drawer {
+    display: flex;
+  }
+
   .slider--tablet.grid--peek {
     margin: 0;
     width: 100%;
@@ -1026,6 +1030,14 @@ summary::-webkit-details-marker {
 }
 
 @media screen and (min-width: 990px) {
+  .header__icons account-icon>span::before {
+    content: 'LOG IN';
+  }
+
+  .header__icons account-icon>span>svg {
+    display: none;
+  }
+
   .grid--6-col-desktop .grid__item {
     width: calc(16.66% - var(--grid-desktop-horizontal-spacing) * 5 / 6);
     max-width: calc(16.66% - var(--grid-desktop-horizontal-spacing) * 5 / 6);
