@@ -160,6 +160,30 @@
               {{ card_product.title | escape }}
             </a>
           </h3>
+          {% if card_product.has_only_default_variant == false %}
+            <div class="product-variants">
+              {% for variant in card_product.variants %}
+                {% assign image = variant.featured_image | default: card_product.featured_image %}
+                <button
+                  class="variant-btn"
+                  data-variant-id="{{ variant.id }}"
+                  data-image="{{ image | img_url: '533x533' }}"
+                  data-image-set="
+                    {{ image | img_url: '165x165' }} 165w,
+                    {{ image | img_url: '360x360' }} 360w,
+                    {{ image | img_url: '533x533' }} 533w,
+                    {{ image | img_url: '720x720' }} 720w,
+                    {{ image | img_url: '940x940' }} 940w,
+                    {{ image | img_url: '1066x1066' }} 1066w,
+                    {{ image | img_url: '2048x2048' }} 2048w
+                  "
+                >
+                  {{ variant.title }}
+                </button>
+              {% endfor %}
+            </div>
+          {% endif %}
+
           <div class="card-information">
             {%- if show_vendor -%}
               <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>

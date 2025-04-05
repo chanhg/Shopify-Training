@@ -1330,3 +1330,35 @@ class CartPerformance {
     );
   }
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+  document.querySelectorAll('.variant-btn').forEach(button => {
+    button.addEventListener('click', function() {
+      let variantId = this.getAttribute('data-variant-id');
+      let newImage = this.getAttribute('data-image');
+      let newImageSet = this.getAttribute('data-image-set');
+
+      let productCard = this.closest('.card__content');
+      let productImage = productCard.parentElement.querySelector('.motion-reduce');
+
+      // Update image for variant product
+      if (newImage && newImageSet && productImage) {
+        productImage.src = newImage;
+        productImage.srcset = newImageSet;
+      }
+
+      // Update link product to this variant
+      const productLink = productCard.querySelector('a.full-unstyled-link');
+      if (productLink && variantId) {
+        const currentHref = productLink.getAttribute('href').split('?')[0];
+        const newUrl = `${currentHref}?variant=${variantId}`;
+        productLink.setAttribute('href', newUrl);
+      }
+
+      // Add class active to variant option
+      const allOptions = productCard.querySelectorAll('.variant-btn, .variant-swatch');
+      allOptions.forEach(opt => opt.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+});
