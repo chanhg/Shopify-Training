@@ -1030,11 +1030,11 @@ summary::-webkit-details-marker {
 }
 
 @media screen and (min-width: 990px) {
-  .header__icons account-icon>span::before {
+  .header__icons .header__icon--account span.svg-wrapper::before {
     content: 'LOG IN';
   }
 
-  .header__icons account-icon>span>svg {
+  .header__icons .header__icon--account span.svg-wrapper>svg {
     display: none;
   }
 
