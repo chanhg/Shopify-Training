@@ -1362,3 +1362,16 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const headings = document.querySelectorAll('.footer-block__heading');
+
+  headings.forEach(heading => {
+    heading.addEventListener('click', () => {
+      const content = heading.nextElementSibling;
+
+      heading.classList.toggle('open');
+      content.classList.toggle('open');
+    });
+  });
+});
