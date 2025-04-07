@@ -219,6 +219,12 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "pagefly_section_t3ezwm": {
+      "type": "pagefly-section",
+      "settings": {
+        "section_id": "pf-92f533fa"
+      }
     }
   },
   "order": [
@@ -227,6 +233,7 @@
     "featured_collection",
     "collage",
     "video",
-    "multicolumn"
+    "multicolumn",
+    "pagefly_section_t3ezwm"
   ]
 }
