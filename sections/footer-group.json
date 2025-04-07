@@ -17,28 +17,28 @@
         "footer-0": {
           "type": "link_list",
           "settings": {
-            "heading": "",
+            "heading": "Shop",
             "menu": "footer-column-1"
           }
         },
         "link_list_dc7Mnw": {
           "type": "link_list",
           "settings": {
-            "heading": "",
+            "heading": "Company",
             "menu": "footer-column-2"
           }
         },
         "footer-1": {
           "type": "link_list",
           "settings": {
-            "heading": "",
+            "heading": "Info",
             "menu": "footer-column-3"
           }
         },
         "link_list_CMDNMg": {
           "type": "link_list",
           "settings": {
-            "heading": "",
+            "heading": "Important",
             "menu": "footer-column-4"
           }
         }
